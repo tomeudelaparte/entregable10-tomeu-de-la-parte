@@ -2,23 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataPersistence: MonoBehaviour
+public class DataPersistence : MonoBehaviour
 {
-    public static DataPersistence sharedInstance;
-
-    private void Awake()
-    {
-        if (sharedInstance == null)
-        {
-            sharedInstance = this;
-            DontDestroyOnLoad(sharedInstance);
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
-
     // G E T T E R S
     public void SetInt(string key, int value)
     {
