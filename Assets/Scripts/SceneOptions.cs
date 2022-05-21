@@ -10,13 +10,17 @@ public class SceneOptions : MonoBehaviour
 
     void Start()
     {
+        // Obtiene el script Session Manager
         sessionManager = FindObjectOfType<SessionManager>();
     }
 
+    // Carga una scene con el nombre proporcionado
     public void LoadScene(string name)
     {
-        sessionManager.onLoadScene();
+        // Cuenta el cambio de scene
+        sessionManager.sceneChangeCounter();
 
+        // Carga la escena
         SceneManager.LoadScene(name);
     }
 }
