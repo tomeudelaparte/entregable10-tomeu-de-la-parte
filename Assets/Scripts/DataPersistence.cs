@@ -6,6 +6,34 @@ public class DataPersistence : MonoBehaviour
 {
     // G E T T E R S
 
+    // Devuelve un int mediante una key proporcionada
+    public int GetInt(string key)
+    {
+        return PlayerPrefs.GetInt(key);
+    }
+
+    // Devuelve un float mediante una key proporcionada
+    public float GetFloat(string key)
+    {
+        return PlayerPrefs.GetFloat(key);
+    }
+
+    // Devuelve un string mediante una key proporcionada
+    public string GetString(string key)
+    {
+        return PlayerPrefs.GetString(key);
+    }
+
+    // Devuelve un bool mediante una key proporcionada
+    public bool GetBool(string key)
+    {
+        // Devuelve parseado a bool un valor string
+        return bool.Parse(PlayerPrefs.GetString(key));
+    }
+
+
+    // S E T T E R S
+
     // Guarda en local un valor int junto a una key
     public void SetInt(string key, int value)
     {
@@ -35,32 +63,8 @@ public class DataPersistence : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // S E T T E R S
 
-    // Devuelve un int mediante una key proporcionada
-    public int GetInt(string key)
-    {
-        return PlayerPrefs.GetInt(key);
-    }
-
-    // Devuelve un float mediante una key proporcionada
-    public float GetFloat(string key)
-    {
-        return PlayerPrefs.GetFloat(key);
-    }
-
-    // Devuelve un string mediante una key proporcionada
-    public string GetString(string key)
-    {
-        return PlayerPrefs.GetString(key);
-    }
-
-    // Devuelve un bool mediante una key proporcionada
-    public bool GetBool(string key)
-    {
-        // Devuelve parseado a bool un valor string
-        return bool.Parse(PlayerPrefs.GetString(key));
-    }
+    // OTHERS
 
     // Comprueba si existe algun valor con la key proporcionada
     public bool HasKey(string key)
